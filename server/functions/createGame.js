@@ -3,7 +3,7 @@ import { getRandomStartDirection } from './createGame';
 const createGame = (gameId, player1Id, player2Id) => {
     const game = {
         gameId,
-        inGame: false,
+        gameState: 'preGame',
         ball: {
             x: ballStart.x,
             y: ballStart.y,

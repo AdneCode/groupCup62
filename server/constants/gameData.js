@@ -1,4 +1,6 @@
 //Size for entire board
+const xMin = 1;
+const yMin = 1;
 const xMax = 25;
 const yMax = 13;
 
