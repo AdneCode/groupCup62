@@ -1,4 +1,5 @@
 import { xMin, yMin, xMax, yMax } from '../constants/gameData';
+import { getNewBallPosition } from '.';
 //checks whether the ball is hitting an edge, a player or not hitting anything at all
 //returns "edge" when colliding with a wall, "player" when colliding with a player
 const checkCollision = (ball, player1, player2) => {
@@ -13,4 +14,7 @@ const checkCollision = (ball, player1, player2) => {
         return 'edge';
         // getNewBallDirection(ball.direction, true);
     }
+
+    //If nothing is in the way, we return false
+    return false;
 };
