@@ -6,4 +6,4 @@ const getRandomStartDirection = () => {
     return direction;
 };
 
-modules.export = getRandomStartDirection;
+module.export = getRandomStartDirection;

@@ -14,6 +14,23 @@ const io = new Server(server);
 let tournaments = [];
 let games = [];
 let users = [];
+let timer = 0;
+
+//every millisecond, the timer is raised by 1
+const raiseTimer = () => {
+    const updateGame = require('./functions/updateGame');
+    if (timer > 20) return (timer = -1);
+    timer += 1;
+    if (timer === 0) {
+        if (!games || games.length === 0) return;
+        const newGames = games.map((i) => {
+            updateGame(i);
+        });
+        games = newGames;
+        io.emit('receiveUpdate', games);
+    }
+};
+setInterval(raiseTimer, 1);
 
 app.use(corsMiddleWare());
 app.use(express.json());
@@ -21,6 +38,12 @@ app.use(express.json());
 //Every socket.on and socket.emit needs to be wrapped around "io.on('connection, socket)"
 io.on('connection', (socket) => {
     socket.on('joinTournament', (name, tournamentId) => {
+        console.log(tournamentId);
+        socket.emit(socket.id);
+    });
+
+    //event for when a client wants to create a new game
+    socket.on('createGame', (name, tournamentId) => {
         console.log(tournamentId);
         socket.emit(socket.id);
     });

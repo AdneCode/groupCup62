@@ -30,4 +30,4 @@ const checkCollision = (ball, player1, player2) => {
     //If nothing is in the way, we return false
     return false;
 };
-modules.export = checkCollision;
+module.export = checkCollision;

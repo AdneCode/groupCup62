@@ -9,4 +9,4 @@ const getNewBallPosition = (ball) => {
     if (ball.direction === 4)
         return { ...ball.direction, x: ball.x - 1, y: ball.y - 1 };
 };
-modules.export = getNewBallPosition;
+module.export = getNewBallPosition;

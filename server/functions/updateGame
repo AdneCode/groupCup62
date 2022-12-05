@@ -5,4 +5,4 @@ const updateGame = (game) => {
     const newBall = getNewBall(game.ball, game.player1, game.player2);
     return { ...game, ball: newBall };
 };
-modules.export = updateGame;
+module.export = updateGame;

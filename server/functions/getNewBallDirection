@@ -17,4 +17,4 @@ const getNewBallDirection = (oldDirection, collision) => {
     }
 };
 
-modules.export = getNewBallDirection;
+module.export = getNewBallDirection;

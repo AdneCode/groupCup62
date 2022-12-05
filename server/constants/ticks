@@ -1,4 +1,4 @@
 const second = 1000;
 const tickRate = 8;
 const tickInterval = second / tickRate;
-modules.export = tickInterval;
+module.export = tickInterval;

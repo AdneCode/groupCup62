@@ -25,4 +25,4 @@ const createGame = (gameId, player1Id, player2Id) => {
     return game;
 };
 
-modules.export = createGame;
+module.export = createGame;
