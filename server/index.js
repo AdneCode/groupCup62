@@ -12,12 +12,17 @@ const server = http.createServer(app);
 const io = new Server(server);
 
 let tournaments = [];
+let games = [];
+let users = [];
 
 app.use(corsMiddleWare());
 app.use(express.json());
 
 //Every socket.on and socket.emit needs to be wrapped around "io.on('connection, socket)"
 io.on('connection', (socket) => {
+    console.log('CONNECTED', socket.id);
+    users.push(socket.id);
+    console.log(users);
     socket.on('joinTournament', (name, tournamentId) => {});
 
     //event when client is sending an input direction to the server
