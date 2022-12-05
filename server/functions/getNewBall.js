@@ -1,7 +1,6 @@
-import { checkCollision } from './checkCollision';
-import { getNewBallPosition } from './getNewBallPosition';
-import { getNewBallDirection } from './getNewBallDirection';
-
+const checkCollision = require('./checkCollision');
+const getNewBallPosition = require('./getNewBallPosition');
+const getNewBallDirection = require('./getNewBallDirection');
 //Returns the new position of the ball
 const getNewBall = (ball, player1, player2) => {
     const collision = checkCollision(ball, player1, player2);

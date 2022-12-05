@@ -1,5 +1,7 @@
-import { player1Start, player2Start, ballStart } from '../constants/gameData';
-import { getRandomStartDirection } from './createGame';
+const player1Start = require('../constants/gameData');
+const player2Start = require('../constants/gameData');
+const ballStart = require('../constants/gameData');
+const getRandomStartDirection = require('./getRandomStartDirection');
 const createGame = (gameId, player1Id, player2Id) => {
     const game = {
         gameId,

@@ -1,5 +1,5 @@
-import { xMin, yMin, xMax, yMax } from '../constants/gameData';
-import { getNewBallPosition } from '.';
+const yMin = require('../constants/gameData');
+const yMax = require('../constants/gameData');
 //checks whether the ball is hitting an edge, a player or not hitting anything at all
 //returns "edge" when colliding with a wall, "player" when colliding with a player
 const checkCollision = (ball, player1, player2) => {
@@ -12,7 +12,6 @@ const checkCollision = (ball, player1, player2) => {
     }
     if (newBall.y === yMax && (ball.direction === 2 || ball.direction === 3)) {
         return 'edge';
-        // getNewBallDirection(ball.direction, true);
     }
 
     if (newBall.x === player1.x || newBall.x === player2.x) {
@@ -31,3 +30,4 @@ const checkCollision = (ball, player1, player2) => {
     //If nothing is in the way, we return false
     return false;
 };
+modules.export = checkCollision;

@@ -1,8 +1,8 @@
 //Size for entire board
-const xMin = 1;
-const yMin = 1;
-const xMax = 25;
-const yMax = 13;
+const xMin = 0;
+const yMin = 0;
+const xMax = 24;
+const yMax = 12;
 
 //Start position of player 1 and player 2
 const xStart = 2;
@@ -16,4 +16,13 @@ const ballStart = { x: Math.ceil(xMax / 2), y: Math.ceil(yMax / 2) };
 //Possible start directions
 const directionsStart = [1, 2, 3, 4];
 
-modules.export = { player1Start, player2Start, ballStart, directionsStart };
+modules.export = {
+    xMin,
+    yMin,
+    xMax,
+    yMax,
+    player1Start,
+    player2Start,
+    ballStart,
+    directionsStart,
+};
