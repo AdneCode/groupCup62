@@ -20,10 +20,10 @@ app.use(express.json());
 
 //Every socket.on and socket.emit needs to be wrapped around "io.on('connection, socket)"
 io.on('connection', (socket) => {
-    console.log('CONNECTED', socket.id);
-    users.push(socket.id);
-    console.log(users);
-    socket.on('joinTournament', (name, tournamentId) => {});
+    socket.on('joinTournament', (name, tournamentId) => {
+        console.log(tournamentId);
+        socket.emit(socket.id);
+    });
 
     //event when client is sending an input direction to the server
     socket.on('sendInput', (direction) => {});
