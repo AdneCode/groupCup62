@@ -1,9 +1,9 @@
-import { directionsStart } from '../constants/gameData';
-
+const directionsStart = require('../constants/gameData');
+//function to generate a random starting direction
 const getRandomStartDirection = () => {
     const direction =
         directionsStart[Math.floor(Math.random() * directionsStart.length)];
     return direction;
 };
 
-export { getRandomStartDirection };
+modules.export = getRandomStartDirection;

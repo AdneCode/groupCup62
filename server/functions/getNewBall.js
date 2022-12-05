@@ -16,3 +16,4 @@ const getNewBall = (ball, player1, player2) => {
     };
     return getNewBallPosition(collidedBall);
 };
+modules.export = getNewBall;

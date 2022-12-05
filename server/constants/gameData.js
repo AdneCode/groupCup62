@@ -16,4 +16,4 @@ const ballStart = { x: Math.ceil(xMax / 2), y: Math.ceil(yMax / 2) };
 //Possible start directions
 const directionsStart = [1, 2, 3, 4];
 
-export { player1Start, player2Start, ballStart, directionsStart };
+modules.export = { player1Start, player2Start, ballStart, directionsStart };
