@@ -19,11 +19,11 @@ const checkCollision = (ball, player1, player2) => {
         //If the new position of the ball is exactly the same as the position of the player at this moment
         if (
             newBall.y === player1.y ||
-            newBall.y - 1 === player1.y ||
-            newBall.y + 1 === player1.y ||
+            (ball.direction === 3 && newBall.y - 1 === player1.y) ||
+            (ball.direction === 4 && newBall.y + 1 === player1.y) ||
             newBall.y === player2.y ||
-            newBall.y - 1 === player1.y ||
-            newBall.y + 1 === player1.y
+            (ball.direction === 1 && newBall.y + 1 === player2.y) ||
+            (ball.direction === 2 && newBall.y - 1 === player2.y)
         ) {
             return 'player';
         }

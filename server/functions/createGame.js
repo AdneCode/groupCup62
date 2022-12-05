@@ -9,10 +9,16 @@ const createGame = (gameId, player1Id, player2Id) => {
             y: ballStart.y,
             direction: getRandomStartDirection(),
         },
-        players: [
-            { playerId: player1Id, x: player1Start.x, y: player2Start.y },
-            { playerId: player2Id, x: player2Start.x, y: player2Start.y },
-        ],
+        player1: {
+            playerId: player1Id,
+            x: player1Start.x,
+            y: player2Start.y,
+        },
+        player2: {
+            playerId: player2Id,
+            x: player2Start.x,
+            y: player2Start.y,
+        },
     };
     return game;
 };
