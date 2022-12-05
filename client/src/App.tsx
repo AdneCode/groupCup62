@@ -1,26 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useEffect } from "react";
+import "./App.css";
+import { io } from "socket.io-client";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  //connect to server
+  const connect = () => {
+    const socket = io("http://localhost:4000");
+    socket.on("connect", () => {
+      socket.emit("joinTournament", "", 1);
+    });
+  };
+
+  //connect to the server once
+  useEffect(() => {
+    connect();
+  }, []);
+
+  return <div className="App">Ping Pong Game</div>;
 }
 
 export default App;
