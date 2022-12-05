@@ -16,3 +16,5 @@ const createGame = (gameId, player1Id, player2Id) => {
     };
     return game;
 };
+
+export { createGame };
